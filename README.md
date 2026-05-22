@@ -3,16 +3,17 @@
 A lightweight, modern React single-page application (SPA) designed to manage user requests with role-based dashboards (User and Manager). Built using React 19, TypeScript, Vite, and React Context API.
 
 ## 🚀 Live Demo
-👉 [View Live Demo](https://mini-request-system-tpct.vercel.app/) 
+
+👉 [View Live Demo](https://mini-request-system-tpct.vercel.app/)
 
 ---
- 
+
 ## Getting Started
- 
+
 **Prerequisites:** Node.js v18+
- 
+
 ```bash
-git clone https://github.com/your-username/mini-request-system.git
+git clone [https://github.com/Etwaiz/mini-request-system.git](https://github.com/Etwaiz/mini-request-system.git)
 cd mini-request-system
 npm install
 npm run dev
@@ -28,7 +29,7 @@ npm run dev
 - **Manager Dashboard:**
   - View all submitted requests in a clean grid system.
   - Filter requests globally or by their specific status (`All`, `New`, `In Progress`, `Done`).
-  - Update request states dynamically (*Accept Request* / *Complete*).
+  - Update request states dynamically (_Accept Request_ / _Complete_).
 - **Persistent State:** Uses `localStorage` to save user roles and request data across page reloads.
 - **Robust Architecture:** Complete decoupling of state logic, custom hooks, and presentation views to satisfy Vite Fast Refresh and strict ESLint configurations.
 
@@ -61,3 +62,4 @@ src/
 ├── App.tsx              # Main orchestrator component with role routing
 ├── index.css            # Clean, modern UI global design styles
 └── main.tsx             # Application entry point wrapped in AppContextProvider
+```
