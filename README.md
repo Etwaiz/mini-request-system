@@ -6,6 +6,19 @@ A lightweight, modern React single-page application (SPA) designed to manage use
 👉 [View Live Demo](https://mini-request-system-tpct.vercel.app/) 
 
 ---
+ 
+## Getting Started
+ 
+**Prerequisites:** Node.js v18+
+ 
+```bash
+git clone https://github.com/your-username/mini-request-system.git
+cd mini-request-system
+npm install
+npm run dev
+```
+
+---
 
 ## 🛠️ Features
 
