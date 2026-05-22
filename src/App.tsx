@@ -1,4 +1,3 @@
-import React from "react";
 import { useApp } from "./context/useApp";
 import { UserDashboard } from "./modules/user/UserDashboard";
 import { ManagerDashboard } from "./modules/manager/ManagerDashboard";

@@ -1,73 +1,51 @@
-# React + TypeScript + Vite
+# Mini Request System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A lightweight, modern React single-page application (SPA) designed to manage user requests with role-based dashboards (User and Manager). Built using React 19, TypeScript, Vite, and React Context API.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
+*Link to your deployed version (e.g., Vercel or GitHub Pages)*
+👉 [View Live Demo](https://YOUR_SUBDOMAIN.vercel.app) 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🛠️ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Role-Based Access Control (RBAC):** Toggle instantly between `User` and `Manager` roles via the header switcher.
+- **User Dashboard:** - Create new requests with a title and detailed problem description.
+  - View a personal list of submitted requests with dynamic status indicators.
+- **Manager Dashboard:**
+  - View all submitted requests in a clean grid system.
+  - Filter requests globally or by their specific status (`All`, `New`, `In Progress`, `Done`).
+  - Update request states dynamically (*Accept Request* / *Complete*).
+- **Persistent State:** Uses `localStorage` to save user roles and request data across page reloads.
+- **Robust Architecture:** Complete decoupling of state logic, custom hooks, and presentation views to satisfy Vite Fast Refresh and strict ESLint configurations.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🧰 Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Framework:** React 19
+- **Bundler & Build Tool:** Vite
+- **Language:** TypeScript (with strict module verification)
+- **State Management:** React Context API + Custom Hooks
+- **Styling:** Vanilla CSS (Custom properties, Flexbox, CSS Grid)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📂 Project Structure
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+```text
+src/
+├── context/
+│   ├── AppContext.tsx   # Contains the global Context Provider component
+│   └── useApp.tsx       # Contains Context definition, types, and custom hook
+├── modules/
+│   ├── manager/
+│   │   └── ManagerDashboard.tsx  # Manager workflow and request filtering
+│   └── user/
+│   │   └── UserDashboard.tsx     # Form submission and user request lists
+├── types/
+│   └── index.ts         # Shared TypeScript interfaces and union types
+├── App.tsx              # Main orchestrator component with role routing
+├── index.css            # Clean, modern UI global design styles
+└── main.tsx             # Application entry point wrapped in AppContextProvider
