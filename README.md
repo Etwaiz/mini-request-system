@@ -3,8 +3,7 @@
 A lightweight, modern React single-page application (SPA) designed to manage user requests with role-based dashboards (User and Manager). Built using React 19, TypeScript, Vite, and React Context API.
 
 ## 🚀 Live Demo
-*Link to your deployed version (e.g., Vercel or GitHub Pages)*
-👉 [View Live Demo](https://YOUR_SUBDOMAIN.vercel.app) 
+👉 [View Live Demo](https://mini-request-system-tpct.vercel.app/) 
 
 ---
 
