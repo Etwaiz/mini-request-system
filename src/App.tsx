@@ -1,6 +1,8 @@
 import { useApp } from "./context/useApp";
 import { UserDashboard } from "./modules/user/UserDashboard";
 import { ManagerDashboard } from "./modules/manager/ManagerDashboard";
+import { ThemeToggler } from "./components/ThemeToggler";
+import { LanguageToggler } from "./components/LanguageToggler";
 
 function App() {
   const { role, changeRole } = useApp();
@@ -9,6 +11,9 @@ function App() {
     <div className="app-container">
       <header className="app-header">
         <h1>Mini Request System</h1>
+
+        <ThemeToggler />
+        <LanguageToggler />
 
         <div className="role-selector">
           <span>

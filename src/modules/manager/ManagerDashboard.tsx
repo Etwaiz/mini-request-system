@@ -3,7 +3,7 @@ import { useApp } from "../../context/useApp";
 import type { RequestStatus } from "../../types/index";
 
 export const ManagerDashboard: React.FC = () => {
-  const { requests, updateRequestStatus } = useApp();
+  const { requests, updateRequestStatus, deleteRequest } = useApp();
 
   const [filter, setFilter] = useState<RequestStatus | "all">("all");
 
@@ -15,7 +15,6 @@ export const ManagerDashboard: React.FC = () => {
   return (
     <div className="manager-dashboard">
       <h2>Manager Dashboard</h2>
-
       <div className="filter-buttons">
         {(["all", "new", "in progress", "done"] as const).map((status) => (
           <button
@@ -30,6 +29,7 @@ export const ManagerDashboard: React.FC = () => {
 
       <div className="manager-requests">
         <h3>Requests List ({filteredRequests.length})</h3>
+        
 
         {filteredRequests.length === 0 ? (
           <p>No requests found with this status.</p>
@@ -47,6 +47,10 @@ export const ManagerDashboard: React.FC = () => {
                 </div>
 
                 <div className="request-actions">
+                  <button onClick={() => deleteRequest(req.id)} className="btn-delete">
+                    Delete
+                  </button>
+                  
                   {req.status === "new" && (
                     <button
                       onClick={() => updateRequestStatus(req.id, "in progress")}

@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import type { UserRole, UserRequest, RequestStatus } from "../types/index";
+import type { UserRole, UserRequest, RequestStatus, ThemeType, LanguageSelection } from "../types/index";
 
 export interface AppContextType {
   role: UserRole;
@@ -7,6 +7,11 @@ export interface AppContextType {
   changeRole: (role: UserRole) => void;
   addRequest: (title: string, description: string) => void;
   updateRequestStatus: (id: string, newStatus: RequestStatus) => void;
+  deleteRequest: (id: string) => void;
+  theme: ThemeType;
+  changeTheme: (theme: ThemeType) => void;
+  language: LanguageSelection;
+  changeLanguage: (language: LanguageSelection) => void;
 }
 
 export const AppContext = createContext<AppContextType | undefined>(undefined);
